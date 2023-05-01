@@ -1,3 +1,4 @@
+import { Time } from '../Time/Time';
 import './NavigationBar.css';
 import { Link, useLocation  } from "react-router-dom";
 
@@ -10,6 +11,7 @@ export function NavigationBar() {
         <Link to="/paintings" className={location.pathname === '/paintings' ? 'active' : ''}>Paintings</Link>
         <Link to="/collection" className={location.pathname === '/collection' ? 'active' : ''}>Collection</Link>
       </nav>
+      <Time></Time>
     </div>
   );
 }
