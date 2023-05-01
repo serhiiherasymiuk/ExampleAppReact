@@ -1,5 +1,9 @@
 .NavigationBar {
     background-color: #08090a;
+    position: fixed;
+    height: 50px;
+    top: 0;
+    width: 100%;
 }
 
 .menu {

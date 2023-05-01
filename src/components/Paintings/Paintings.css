@@ -1,0 +1,31 @@
+.header-img-container {
+    padding-top: 30px;
+}
+
+.Paintings {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.square-img {
+    height: 450px;
+}
+
+.vertical-rectangle-img {
+    height: 500px;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 100px;
+}

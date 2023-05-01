@@ -2,7 +2,8 @@ import './App.css';
 import { NavigationBar } from './components/NavigationBar/NavigationBar';
 import { Biography } from './components/Biography/Biography';
 import { Route, Routes } from 'react-router-dom';
-import { Painting } from './components/Paintings/Paintings';
+import { Paintings } from './components/Paintings/Paintings';
+import { Collection } from './components/Collection/Collection';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Biography />} />
-          <Route path="/" element={<Painting />} />
+          <Route path="/paintings" element={<Paintings />} />
+          <Route path="/collection" element={<Collection />} />
         </Routes>
       </main>
     </div>
