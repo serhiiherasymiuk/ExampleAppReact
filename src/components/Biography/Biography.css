@@ -1,0 +1,32 @@
+.Biography {
+    padding: 0 100px;
+}
+
+p {
+    text-align: left;
+}
+
+.header {
+    border-bottom: 1px #08090a solid;
+    display: flex;
+}
+
+.header-min {
+    display: flex;
+}
+
+.header-content {
+    display: flex;
+}
+
+.header-content>div:first-child {
+    padding-right: 30px;
+}
+
+.header-img-container {
+    padding-top: 30px;
+}
+
+.header-img-container img {
+    height: 300px;
+}
