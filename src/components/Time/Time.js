@@ -1,27 +1,31 @@
-import './Time.css';
 import { useEffect, useState } from "react";
+import './Time.css';
 
 export function Time() {
-  const geolocationApiKey = 'e2e2896edd0c4dc59a8301b1299f6e56';
-  const [time, setTime] = useState([]);
-  const [date, setDate] = useState([]);
+  const geolocationApiKey = '1653ea892b214acf9506619e9ecfd288';
+  const [time, setTime] = useState('');
+  const [date, setDate] = useState('');
   const [showInfo, setShowInfo] = useState(false);
 
-  const getTime = () => {
+  const fetchDate = () => {
     let timeUrl = `https://api.ipgeolocation.io/ipgeo?apiKey=${geolocationApiKey}`;
     fetch(timeUrl)
       .then(res => res.json())
       .then(data => {
-        setTime(data.time_zone.current_time.substring(11, 19));
         setDate(data.time_zone.current_time.substring(0, 10));
       });
   };
 
   useEffect(() => {
-    getTime();
-    const interval = setInterval(getTime, 1000);
+    fetchDate();
+    const interval = setInterval(fetchDate, 3600000);
     return () => clearInterval(interval);
-  }, [geolocationApiKey]);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => setTime(new Date().toString().substring(15, 24)), 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleMouseEnter = () => {
     setShowInfo(true);
@@ -33,7 +37,7 @@ export function Time() {
 
   return (
     <div className="Time" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <div className="time-info">
+      <div className={`time-info ${showInfo ? 'time-info-expanded' : ''}`}>
         <p>{time}</p>
         {showInfo && (
           <p>{date}</p>
