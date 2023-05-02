@@ -23,30 +23,25 @@ export function AddPainting(props) {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label>Title</label>
-          <input {...register("title", { required: true })} type="text" name="title" />
+          <input placeholder='Title' {...register("title", { required: true })} type="text" name="title" />
           {errors.title && <span className="error">Title is required</span>}
         </div>
         <div>
-          <label>Description</label>
-          <input {...register("description", { required: true })} type="text" name="description" />
+          <input placeholder='Description' {...register("description", { required: true })} type="text" name="description" />
           {errors.description && <span className="error">Description is required</span>}
         </div>
         <div>
-          <label>Image URL</label>
-          <input {...register("src", { required: true })} type="text" name="src" />
+          <input placeholder='Image URL' {...register("src", { required: true })} type="text" name="src" />
           {errors.src && <span className="error">Image URL is required</span>}
         </div>
         <div>
-          <label>Author</label>
-          <input {...register("author", { required: true })} type="text" name="author" />
+          <input placeholder='Author' {...register("author", { required: true })} type="text" name="author" />
           {errors.author && <span className="error">Author is required</span>}
         </div>
         <div>
-          <label>Year</label>
-          <input {...register("year", { required: true, min: 1000, max: 2023 })} type="number" name="year" />
+          <input placeholder='Year' {...register("year", { required: true, min: 1000, max: 2023 })} type="number" name="year" />
           {errors.year?.type === "required" && <span className="error">Year is required</span>}
-          {errors.year?.type === "max" && <span className="error">Year should be before 2023</span>}
+          {errors.year?.type === "max" && <span className="error">Year should be before {(new Date).getFullYear()}</span>}
         </div>
         <div>
           <button type="submit">Add Painting</button>

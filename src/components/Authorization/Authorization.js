@@ -27,43 +27,35 @@ export function Authorization() {
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
-            <label>Nickname</label>
-            <input {...register("nickname", { required: true })} type="text" name="nickname" />
+            <input placeholder='Nickname' {...register("nickname", { required: true })} type="text" name="nickname" />
             {errors.nickname && <span className="error">Nickname is required</span>}
           </div>
           <div>
-            <label>Email</label>
-            <input {...register("email", { required: true })} type="text" name="email" />
+            <input placeholder='Email' {...register("email", { required: true })} type="text" name="email" />
             {errors.email && <span className="error">Email is required</span>}
           </div>
           <div>
-            <label>Gender</label>
-            <input {...register("gender", { required: true })} type="text" name="gender" />
+            <input placeholder='Gender' {...register("gender", { required: true })} type="text" name="gender" />
             {errors.gender && <span className="error">Gender is required</span>}
           </div>
           <div>
-            <label>Age</label>
-            <input {...register("age", { required: true })} type="number" name="age" />
+            <input placeholder='Age' {...register("age", { required: true })} type="number" name="age" />
             {errors.age && <span className="error">Age is required</span>}
           </div>
           <div>
-            <label>Password</label>
-            <input {...register("password", { required: true })} type="password" name="password" />
+            <input placeholder='Password' {...register("password", { required: true })} type="password" name="password" />
             {errors.password && <span className="error">Password is required</span>}
           </div>
           <div>
-            <label>Photo URL</label>
-            <input {...register("photo", { required: true })} type="text" name="photo" />
+            <input placeholder='Photo URL' {...register("photo", { required: true })} type="text" name="photo" />
             {errors.photo && <span className="error">Photo URL is required</span>}
           </div>
           <div>
-            <label>Description</label>
-            <textarea {...register("description", { required: true })} name="description" />
+            <textarea placeholder='Description' {...register("description", { required: true })} name="description" />
             {errors.description && <span className="error">Description is required</span>}
           </div>
           <div>
-            <label>Tags</label>
-            <input {...register("tags", { required: true })} type="text" name="tags" />
+            <input placeholder='Tags' {...register("tags", { required: true })} type="text" name="tags" />
             {errors.tags && <span className="error">Tags is required</span>}
           </div>
           <div>
