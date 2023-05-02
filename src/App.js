@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Collection } from './components/Collection/Collection';
 import { AddPainting } from './components/AddPainting/AddPainting';
 import { useState } from "react";
+import { Authorization } from './components/Authorization/Authorization';
 
 function App() {
   const [images, setImages] = useState([  {
@@ -53,6 +54,7 @@ function App() {
           <Route path="/" element={<Biography />} />
           <Route path="/collection" element={<Collection images={images} />} />
           <Route path="/add" element={<AddPainting onAddImage={handleAddImage} />} />
+          <Route path="/authorization" element={<Authorization />} />
         </Routes>
       </main>
     </div>
