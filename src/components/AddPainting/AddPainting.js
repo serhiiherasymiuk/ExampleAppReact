@@ -2,50 +2,51 @@ import './AddPainting.css';
 import { useForm } from "react-hook-form";
 
 export function AddPainting(props) {
-  const onSubmit = (data) => {
-    const newPainting = {
-      title: data.title,
-      description: data.description,
-      src: data.src,
-      genre: data.genre,
-      author: data.author,
-      year: data.year,
-    };
-    props.onAddImage(newPainting);
-  };
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  const onSubmit = (data) => {
+    const newPainting = {
+      title: data.title,
+      description: data.description,
+      src: data.src,
+      author: data.author,
+      year: data.year,
+    };
+    props.onAddImage(newPainting);
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label>Title</label>
-          <input {...register("title")} type="text" name="title" />
+          <input {...register("title", { required: true })} type="text" name="title" />
+          {errors.title && <span className="error">Title is required</span>}
         </div>
         <div>
           <label>Description</label>
-          <input {...register("description")} type="text" name="description" />
+          <input {...register("description", { required: true })} type="text" name="description" />
+          {errors.description && <span className="error">Description is required</span>}
         </div>
         <div>
           <label>Image URL</label>
-          <input {...register("src")} type="text" name="src" />
-        </div>
-        <div>
-          <label>Genre</label>
-          <input {...register("genre")} type="text" name="genre" />
+          <input {...register("src", { required: true })} type="text" name="src" />
+          {errors.src && <span className="error">Image URL is required</span>}
         </div>
         <div>
           <label>Author</label>
-          <input {...register("author")} type="text" name="author" />
+          <input {...register("author", { required: true })} type="text" name="author" />
+          {errors.author && <span className="error">Author is required</span>}
         </div>
         <div>
           <label>Year</label>
-          <input {...register("year")} type="number" name="year" />
+          <input {...register("year", { required: true, min: 1000, max: 2023 })} type="number" name="year" />
+          {errors.year?.type === "required" && <span className="error">Year is required</span>}
+          {errors.year?.type === "max" && <span className="error">Year should be before 2023</span>}
         </div>
         <div>
           <button type="submit">Add Painting</button>
