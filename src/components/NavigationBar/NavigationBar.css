@@ -1,0 +1,30 @@
+.NavigationBar {
+    background-color: #08090a;
+    position: fixed;
+    height: 50px;
+    top: 0;
+    width: 100%;
+    border-bottom: 3px white solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.NavigationBar p {
+    color: white
+}
+
+.menu {
+    display: flex;
+    gap: 10px;
+    padding: 10px 100px;
+}
+  
+.menu a {
+    transition: all .2s ease-in-out;
+    border-radius: 50px;
+    padding: 5px 30px;
+    color:white;
+    text-decoration: none;
+    font-weight: bold;
+}

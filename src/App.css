@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  padding-top: 50px;
+}
+
+.active {
+  background-color: #00b2ca;
 }
 
 .App-logo {
