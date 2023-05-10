@@ -1,0 +1,33 @@
+.header-img-container {
+    padding-top: 30px;
+}
+
+.Collection {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+img {
+    height: 500px;
+}
+
+.img-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 100px;
+    border-bottom: 1px #08090a solid;
+}
+
+.img-description p:last-child {
+    padding-bottom: 30px;
+}
+
+.img-description p{
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+}

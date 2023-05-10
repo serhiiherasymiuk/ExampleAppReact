@@ -1,0 +1,22 @@
+.Time {
+    margin-right: 100px;
+    cursor: pointer;
+}
+
+.Time p {
+    margin: 0;
+}
+
+.time-info {
+    background-color: #08090a;
+    font-size: 24px;
+}
+
+.time-info-expanded {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #08090a;
+    font-size: 18px;
+  }
